@@ -1,0 +1,51 @@
+#simple-jwt-login-mailpoet * {
+    box-sizing: border-box;
+}
+#simple-jwt-login-mailpoet .row{
+    width: 100%;
+}
+#simple-jwt-login-mailpoet h1{
+    width: 100%;
+    text-align: center;
+}
+#simple-jwt-login-mailpoet{
+    max-width: 100%;
+}
+#simple-jwt-login-mailpoet .alert-warning{
+    margin-top:10px;
+    padding: 10px;
+}
+#simple-jwt-login-mailpoet .item{
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px 0;
+}
+#simple-jwt-login-mailpoet .item label{
+    font-weight: bold;
+    line-height: 40px;
+}
+
+#simple-jwt-login-mailpoet .preview-container{
+    min-height: 200px;
+    margin-bottom: 20px;
+}
+#simple-jwt-login-mailpoet #simple-jwt-login-mailpoet-short-code{
+    padding: 20px 10px;
+    background-color: #fe5301;
+    color: #FFFFFF;
+    border-radius: 0.3em;
+    -moz-border-radius: 0.3em;
+    -webkit-border-radius: 0.3em;
+    border:1px solid orange;
+}
+#simple-jwt-login-mailpoet .preview-container .preview-button-container{
+    min-height: 100px;
+    border:1px dotted #aaaaaa;
+    width: 100%;
+    text-align: center;
+    padding: 20px 10px;
+}
+#simple-jwt-login-mailpoet .preview-container.shortcode{
+
+}
+
