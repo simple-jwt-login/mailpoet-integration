@@ -7,7 +7,7 @@
     Author URI: https://profiles.wordpress.org/nicu_m/
     Text Domain: simple-jwt-login-mailpoet
     Domain Path: /i18n
-    Version: 0.1.0
+    Version: 0.1.1
 */
 
 add_action('admin_menu', 'simple_jwt_login__mailpoet_plugin_create_menu_entry', 11);

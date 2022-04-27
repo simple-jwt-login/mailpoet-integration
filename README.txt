@@ -6,7 +6,7 @@ Tags: jwt, API, auto login, tokens, REST, auth, generate jwt, mailpoet
 Requires at least: 4.4.0
 Tested up to: 5.9
 Requires PHP: 5.3
-Stable tag: 0.1.0
+Stable tag: 0.1.1
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -24,9 +24,10 @@ Available shortcode parameters:
 - text : The text for the link
 - class: Class added for the link
 - style: Custom CSS added to the link
-- validity: The Variability of the JWT.  
+- validity: The number of seconds a JWT is valid  
 - authCode: Auth Code that is required by Autologin. You will find this in Simple-JWT-Login plugin -> Auth Codes 
 - redirectUrl: This URL will overwrite the SimpleJWTLogin settings, and it will specify where users will be redirected after autologin. 
+- isURL: When this parameter is provided, the shortcode will return only the autologin URL
 
 Full short code example:
 ```
@@ -70,6 +71,9 @@ No. This plugin works only with MailPoet 3. MailPoet 2 is deprecated.
 Yes. You can add as many short-codes as you want in a single email template.
 
 == Changelog ==
+
+= 0.1.1 ( 26 Apr 2022) =
+- Add a new parameter to allow the display of only the URL
 
 = 0.1.0 ( 06 Apr 2022) =
 - Initial release

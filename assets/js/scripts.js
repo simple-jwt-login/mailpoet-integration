@@ -6,7 +6,7 @@ jQuery(document).ready(
 
         renderCode();
 
-        $('#simple-jwt-login-mailpoet .input').keyup(function () {
+        $('#simple-jwt-login-mailpoet .input').bind('keyup change', function () {
             renderCode();
         });
 
@@ -31,7 +31,15 @@ jQuery(document).ready(
          * @returns {*[]} Array of [code, link]
          */
         function addCodeParameter(id, code, codeParameter, link, linkParameter) {
-            let text = $('#simple-jwt-login-mailpoet #' + id).val();
+            let element = $('#simple-jwt-login-mailpoet #' + id);
+
+            let text;
+            if(element.is(':checkbox')) {
+                text = element.is(':checked') ? 'on' : '';
+            } else {
+                text = element.val();
+            }
+
             if (text != '') {
                 code += ' ' + codeParameter + '="' + sanitizeText(text) + '"';
                 if (typeof link !== 'undefined' && typeof linkParameter !== undefined) {
@@ -53,10 +61,16 @@ jQuery(document).ready(
             [code, link] = addCodeParameter('text-jwt-validity', code, 'validity', link);
             [code, link] = addCodeParameter('text-redirectUrl', code, 'redirectUrl', link);
             [code, link] = addCodeParameter('text-auth-code', code, 'authCode', link);
-
+            [code, link] = addCodeParameter('text-jwt-isUrl', code, 'isUrl', link);
             code += ']';
+
             linkPreview.innerHTML = '';
-            linkPreview.appendChild(link);
+
+            if($('#simple-jwt-login-mailpoet #text-jwt-isUrl').is(':checked')) {
+                linkPreview.innerHTML = 'https://{YOUR_URL}?JWT={your_jwt_will_be_added_here}';
+            } else {
+                linkPreview.appendChild(link);
+            }
             shortCodePreview.innerHTML = code;
         }
 

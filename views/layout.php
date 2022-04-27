@@ -79,6 +79,20 @@ if (!$isPluginEnabled) {
                     <input type="text" id="text-jwt-validity" class="input form-control" value="604800">
 
                 </div>
+
+                <div class="item">
+                    <label for="text-jwt-isUrl"><?php echo __('Is URL', 'simple-jwt-login-mailpoet'); ?></label>
+                    <p>
+                        <?php
+                        echo __(
+                            'If this is checked, then the shortcode will return only the autologin URL',
+                            'simple-jwt-login-mailpoet'
+                        );
+                        ?>
+                    </p>
+                    <input type="checkbox" id="text-jwt-isUrl" class="input form-control">
+                    <label for="text-jwt-isUrl"><?php echo __('Shortcode should return only the autologin URL', 'simple-jwt-login-mailpoet'); ?></label>
+                </div>
                 <div class="item">
                     <label for="text-redirectUrl"><?php echo __('RedirectUrl', 'simple-jwt-login-mailpoet'); ?></label>
                     <p>

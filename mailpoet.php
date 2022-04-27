@@ -62,7 +62,7 @@ function simple_jwt_login_mailpoet_shortcode(
         $isAuthCodeRequired = $jwtSettings->getLoginSettings()->isAuthKeyRequiredOnLogin();
 
         if ($isAuthCodeRequired && isset($arguments['authcode'])) {
-            $url .= '&'. $jwtSettings->getAuthCodesSettings()->getAuthCodeKey() . '=' . $arguments['authcode'];
+            $url .= '&' . $jwtSettings->getAuthCodesSettings()->getAuthCodeKey() . '=' . $arguments['authcode'];
         }
         if (isset($arguments['redirectUrl']) && $arguments['redirectUrl'] !== '') {
             $url .= '&redirectUrl=' . $arguments['redirectUrl'];
@@ -72,12 +72,15 @@ function simple_jwt_login_mailpoet_shortcode(
         $style = isset($arguments['style']) ? $arguments['style'] : null;
         $class = isset($arguments['class']) ? $arguments['class'] : null;
 
-        $link = '<a href="' . $url . '"'
+        if (isset($arguments['isUrl'])) {
+            return $url;
+        }
+
+       return '<a href="' . $url . '"'
             . ($style ? ' style="' . $style . '"' : '')
             . ($class ? ' class="' . $class . '"' : '')
             . '>' . $loginText . '</a>';
 
-        return $link;
     } catch (Exception $e) {
     }
 
