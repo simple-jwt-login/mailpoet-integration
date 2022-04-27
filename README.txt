@@ -14,10 +14,12 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 This plugin is an Add-on for Simple-Jwt-Login. It allows you to automatically login users from the newsletter sent by MailPoet into a WordPress website using a JWT.
 
-Simple shortcode example: 
+Simple shortcode example:
+
 ```
     [custom:simple-jwt-login]
 ```
+
 This shortcode will generate a link, with the text "Login"
 
 Available shortcode parameters:
@@ -30,8 +32,9 @@ Available shortcode parameters:
 - isURL: When this parameter is provided, the shortcode will return only the autologin URL
 
 Full short code example:
+
 ```
-[custom:simple-jwt-login text="Login" class="myClassName" style="color:red;" validity="604800" authCode="1"]
+    [custom:simple-jwt-login text="Login" class="myClassName" style="color:red;" validity="604800" authCode="1"]
 ```
 
 This example will generate a red link, with the text "Login".
