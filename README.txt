@@ -1,4 +1,4 @@
-=== Simple JWT Login MailPoet- Login users from newsletter ===
+=== Simple JWT Login MailPoet - Login users from newsletter ===
 
 Contributors: nicu_m
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PK9BCD6AYF58Y&source=url
