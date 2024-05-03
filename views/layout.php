@@ -52,7 +52,7 @@ if (!$isPluginEnabled) {
                     </p>
                     <input type="text" id="text-auth-code" class="input form-control" value="">
                     <?php
-                    if ($autologinRequiresAuthCodes || true) {
+                    if ($autologinRequiresAuthCodes) {
                         ?>
                         <div class="alert-warning">
                             <?php
@@ -76,7 +76,7 @@ if (!$isPluginEnabled) {
                         );
                         ?>
                     </p>
-                    <input type="text" id="text-jwt-validity" class="input form-control" value="604800">
+                    <input type="text" id="text-jwt-validity" class="input form-control" value="604800" />
 
                 </div>
 

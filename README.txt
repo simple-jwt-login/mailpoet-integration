@@ -4,9 +4,9 @@ Contributors: nicu_m
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PK9BCD6AYF58Y&source=url
 Tags: jwt, API, auto login, tokens, REST, auth, generate jwt, mailpoet
 Requires at least: 4.4.0
-Tested up to: 5.9
-Requires PHP: 5.3
-Stable tag: 0.1.1
+Tested up to: 6.5
+Requires PHP: 5.5
+Stable tag: 1.0.0
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -16,9 +16,9 @@ This plugin is an Add-on for Simple-Jwt-Login. It allows you to automatically lo
 
 Simple shortcode example:
 
-```
+``
     [custom:simple-jwt-login]
-```
+``
 
 This shortcode will generate a link, with the text "Login"
 
@@ -33,9 +33,9 @@ Available shortcode parameters:
 
 Full short code example:
 
-```
-    [custom:simple-jwt-login text="Login" class="myClassName" style="color:red;" validity="604800" authCode="1"]
-```
+``
+[custom:simple-jwt-login text="Login" class="myClassName" style="color:red;" validity="604800" authCode="1"]
+``
 
 This example will generate a red link, with the text "Login".
 
@@ -74,6 +74,9 @@ No. This plugin works only with MailPoet 3. MailPoet 2 is deprecated.
 Yes. You can add as many short-codes as you want in a single email template.
 
 == Changelog ==
+
+= 1.0.0 ( 03 May 2024)
+- Test with latest WordPress version
 
 = 0.1.1 ( 26 Apr 2022) =
 - Add a new parameter to allow the display of only the URL

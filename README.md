@@ -35,7 +35,7 @@ Available shortcode parameters:
 Full short code example:
 
 ```
-    [custom:simple-jwt-login text="Login" class="myClassName" style="color:red;" validity="604800" authCode="1"]
+[custom:simple-jwt-login text="Login" class="myClassName" style="color:red;" validity="604800" authCode="1"]
 ```
 
 This example will generate a red link, with the text "Login".
