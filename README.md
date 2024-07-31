@@ -1,4 +1,10 @@
 # Simple JWT Login MailPoet - Login users from newsletter
+<p align="center">
+  <a href="https://wordpress.org/support/plugin/simple-jwt-login-mailpoet/reviews/"><img src="https://img.shields.io/wordpress/plugin/stars/simple-jwt-login-mailpoet" alt="Rating" /></a>
+  <a href="https://wordpress.org/plugins/simple-jwt-login-mailpoet/advanced#plugin-download-stats"><img src="https://img.shields.io/wordpress/plugin/dt/simple-jwt-login-mailpoet" alt="Total Downloads" /></a>
+  <a href="https://wordpress.org/plugins/simple-jwt-login-mailpoet/#description"><img src="https://img.shields.io/wordpress/plugin/installs/simple-jwt-login-mailpoet" alt="Active installs" /></a>
+  <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen" alt="PRs welcome" /></a>
+</p>
 
 This is a WordPress plugin, and it is an Add-on for the Simple-Jwt-Login plugin.
 

@@ -1,13 +1,12 @@
 <?php
 
 use SimpleJWTLogin\Helpers\Jwt\JwtKeyFactory;
-use SimpleJWTLogin\Libraries\JWT;
+use SimpleJWTLogin\Libraries\JWT\JWT;
 use SimpleJWTLogin\Modules\SimpleJWTLoginSettings;
 use SimpleJWTLogin\Modules\WordPressData;
 
 add_filter('mailpoet_newsletter_shortcode', 'simple_jwt_login_mailpoet_shortcode', 1, 6);
 //mailpoet_newsletter_shortcode
-
 
 function simple_jwt_login_mailpoet_shortcode(
     $shortcode,
@@ -18,7 +17,7 @@ function simple_jwt_login_mailpoet_shortcode(
     $arguments
 )
 {
-    $pluginshortcode = 'custom:simplejwtlogin';
+    $pluginshortcode = 'custom:simple-jwt-login';
     $isValidShortcode = strpos($shortcode, '[' . $pluginshortcode) === 0;
 
     // always return the shortcode if it doesn't match your own!
@@ -76,7 +75,7 @@ function simple_jwt_login_mailpoet_shortcode(
             return $url;
         }
 
-       return '<a href="' . $url . '"'
+        return '<a href="' . $url . '"'
             . ($style ? ' style="' . $style . '"' : '')
             . ($class ? ' class="' . $class . '"' : '')
             . '>' . $loginText . '</a>';
