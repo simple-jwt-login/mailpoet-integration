@@ -11,7 +11,7 @@
 */
 
 add_action('admin_menu', 'simple_jwt_login__mailpoet_plugin_create_menu_entry', 11);
-if (check_simple_jwt_login_activated() == false) {
+if (!check_simple_jwt_login_activated()) {
     add_action('admin_notices', 'simple_jwt_login_plugin_missing_notice');
 }
 

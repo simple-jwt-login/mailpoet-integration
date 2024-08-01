@@ -2,7 +2,7 @@ jQuery(document).ready(
     function ($) {
         const shortcode = 'custom:simple-jwt-login';
         const shortCodePreview = document.getElementById('simple-jwt-login-mailpoet-short-code');
-        const linkPreview = document.getElementById('simple-jwt-login-mailport-preview');
+        const linkPreview = document.getElementById('simple-jwt-login-mailpoet-preview');
 
         renderCode();
 

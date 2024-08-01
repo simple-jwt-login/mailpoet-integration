@@ -30,6 +30,7 @@ if (!$isPluginEnabled) {
     <?php
 }
 ?>
+
 <div id="simple-jwt-login-mailpoet">
     <div class="row">
         <div class="col-md-12">
@@ -67,7 +68,8 @@ if (!$isPluginEnabled) {
                     ?>
                 </div>
                 <div class="item">
-                    <label for="text-auth-code"><?php echo __('JWT Validity', 'simple-jwt-login-mailpoet'); ?></label>
+                    <label
+                        for="text-jwt-validity"><?php echo __('JWT Validity', 'simple-jwt-login-mailpoet'); ?></label>
                     <p>
                         <?php
                         echo __(
@@ -76,7 +78,7 @@ if (!$isPluginEnabled) {
                         );
                         ?>
                     </p>
-                    <input type="text" id="text-jwt-validity" class="input form-control" value="604800" />
+                    <input type="text" id="text-jwt-validity" class="input form-control" value="604800"/>
 
                 </div>
 
@@ -91,7 +93,8 @@ if (!$isPluginEnabled) {
                         ?>
                     </p>
                     <input type="checkbox" id="text-jwt-isUrl" class="input form-control">
-                    <label for="text-jwt-isUrl"><?php echo __('Shortcode should return only the autologin URL', 'simple-jwt-login-mailpoet'); ?></label>
+                    <label
+                        for="text-jwt-isUrl"><?php echo __('Shortcode should return only the autologin URL', 'simple-jwt-login-mailpoet'); ?></label>
                 </div>
                 <div class="item">
                     <label for="text-redirectUrl"><?php echo __('RedirectUrl', 'simple-jwt-login-mailpoet'); ?></label>
@@ -106,9 +109,10 @@ if (!$isPluginEnabled) {
                     <input type="text" id="text-redirectUrl" class="input form-control" value="">
 
                 </div>
+                <hr/>
                 <h2><?php echo __('Design', 'simple-jwt-login-mailpoet'); ?></h2>
                 <div class="item">
-                    <label for="text-value"><?php echo __('Text', 'simple-jwt-login-mailpoet'); ?>:</label>
+                    <label for="text-value"><?php echo __('Text', 'simple-jwt-login-mailpoet'); ?></label>
                     <p>
                         <?php
                         echo __(
@@ -120,7 +124,7 @@ if (!$isPluginEnabled) {
                     <input type="text" id="text-value" class="input form-control" value="Login">
                 </div>
                 <div class="item">
-                    <label for="class-value"><?php echo __('Class', 'simple-jwt-login-mailpoet'); ?>:</label>
+                    <label for="class-value"><?php echo __('Class', 'simple-jwt-login-mailpoet'); ?></label>
                     <p>
                         <?php
                         echo __(
@@ -132,7 +136,7 @@ if (!$isPluginEnabled) {
                     <input type="text" id="class-value" class="input form-control" value="">
                 </div>
                 <div class="item">
-                    <label for="class-style"><?php echo __('Style', 'simple-jwt-login-mailpoet'); ?>:</label>
+                    <label for="class-style"><?php echo __('Style', 'simple-jwt-login-mailpoet'); ?></label>
                     <p>
                         <?php
                         echo __(
@@ -141,7 +145,7 @@ if (!$isPluginEnabled) {
                         );
                         ?>
                     </p>
-                    <textarea id="class-style" class="input form-control" value=""></textarea>
+                    <textarea id="class-style" class="input form-control"></textarea>
                 </div>
             </div>
         </div>
@@ -162,11 +166,10 @@ if (!$isPluginEnabled) {
                 <div class="preview-container">
                     <h3><?php echo __('Shortcode Preview', 'simple-jwt-login-mailpoet'); ?></h3>
                     <div class="preview-button-container">
-                        <div id="simple-jwt-login-mailport-preview"></div>
+                        <div id="simple-jwt-login-mailpoet-preview"></div>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </div>

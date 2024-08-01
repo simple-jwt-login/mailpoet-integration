@@ -13,7 +13,7 @@ It allows you to automatically login users from the newsletter sent by MailPoet 
 ## Requirements
 
 - [MailPoet](https://wordpress.org/plugins/mailpoet/) WordPress plugin
-- [Simple-JWT-Login](https://wordpress.org/plugins/simple-jwt-login/) Wordpress plugin
+- [Simple-JWT-Login](https://wordpress.org/plugins/simple-jwt-login/) WordPress plugin
 
 ## Usage
 
@@ -45,6 +45,12 @@ Full short code example:
 ```
 
 This example will generate a red link, with the text "Login".
+
+You can also customize the shortcode to just return the URL.
+
+```
+[custom:simple-jwt-login text="Login" validity="604800" isUrl="on"]
+```
 
 
 ## Installation

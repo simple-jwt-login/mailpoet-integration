@@ -17,11 +17,11 @@ function simple_jwt_login_mailpoet_shortcode(
     $arguments
 )
 {
-    $pluginshortcode = 'custom:simple-jwt-login';
-    $isValidShortcode = strpos($shortcode, '[' . $pluginshortcode) === 0;
+    $re = '/^\[custom:simple[-]?jwt[-]?login(.*)\]$/m';
+    preg_match_all($re, $shortcode, $matches, PREG_SET_ORDER, 0);
 
     // always return the shortcode if it doesn't match your own!
-    if ($isValidShortcode === false || $subscriber === null) {
+    if (empty($matches)) {
         return $shortcode;
     }
 
@@ -64,7 +64,7 @@ function simple_jwt_login_mailpoet_shortcode(
             $url .= '&' . $jwtSettings->getAuthCodesSettings()->getAuthCodeKey() . '=' . $arguments['authcode'];
         }
         if (isset($arguments['redirectUrl']) && $arguments['redirectUrl'] !== '') {
-            $url .= '&redirectUrl=' . $arguments['redirectUrl'];
+            $url .= '&redirectUrl=' . urlencode($arguments['redirectUrl']);
         }
 
         $loginText = isset($arguments['text']) ? $arguments['text'] : 'Login';
