@@ -71,8 +71,8 @@ or
 Next steps:
 
 
-In The "Simple JWT Login" tab, there will be a new submenu item "MailPoet integration". 
-Generate your shortcode there and copy it into your newsletter templates.
+- In The "Simple JWT Login" tab, there will be a new submenu item "MailPoet integration". 
+- Generate your shortcode there and copy it into your newsletter templates.
 
 
 ## Frequently Asked Questions
