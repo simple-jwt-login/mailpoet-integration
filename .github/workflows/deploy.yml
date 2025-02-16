@@ -14,6 +14,7 @@ jobs:
         uses: simple-jwt-login/deployer@main
         with:
           plugin_folder: "/"
+          exclude: ".github/, README.md, .gitignore, LICENSE"
           slug: "simple-jwt-login-mailpoet"
           username: ${{secrets.SVN_USERNAME}}
           password: ${{secrets.SVN_PASSWORD}}
