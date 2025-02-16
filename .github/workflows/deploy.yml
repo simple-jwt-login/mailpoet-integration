@@ -19,5 +19,4 @@ jobs:
           username: ${{secrets.SVN_USERNAME}}
           password: ${{secrets.SVN_PASSWORD}}
           tag: ${{ github.ref_name }}
-#          assets_folder: "wordpress.org/assets"
           dry-run: true
