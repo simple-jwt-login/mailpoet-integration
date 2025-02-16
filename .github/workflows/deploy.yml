@@ -1,0 +1,22 @@
+name: Deploy WordPress.org [WIP]
+
+on:
+  push:
+    branches: '**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Deploy to WordPress.org
+        uses: simple-jwt-login/deployer@main
+        with:
+          plugin_folder: "/"
+          slug: "simple-jwt-login-mailpoet"
+          username: ${{secrets.SVN_USERNAME}}
+          password: ${{secrets.SVN_PASSWORD}}
+          tag: ${{ github.ref_name }}
+#          assets_folder: "wordpress.org/assets"
+          dry-run: true

@@ -4,7 +4,7 @@ Contributors: nicu_m
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PK9BCD6AYF58Y&source=url
 Tags: jwt, auto login, tokens, auth, generate jwt, mailpoet
 Requires at least: 4.4.0
-Tested up to: 6.6
+Tested up to: 6.7
 Requires PHP: 5.5
 Stable tag: 1.0.1
 License: GPLv2
