@@ -17,5 +17,5 @@ jobs:
           slug: "simple-jwt-login-mailpoet"
           username: ${{secrets.SVN_USERNAME}}
           password: ${{secrets.SVN_PASSWORD}}
-          tag: "test-"${{ github.ref_name }}
+          tag: ${{ github.ref_name }}
           dry-run: true
