@@ -7,7 +7,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v2
       - name: Deploy to WordPress.org
@@ -18,5 +17,5 @@ jobs:
           slug: "simple-jwt-login-mailpoet"
           username: ${{secrets.SVN_USERNAME}}
           password: ${{secrets.SVN_PASSWORD}}
-          tag: ${{ github.ref_name }}
+          tag: "test-"${{ github.ref_name }}
           dry-run: true
