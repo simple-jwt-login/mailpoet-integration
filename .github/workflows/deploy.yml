@@ -2,20 +2,44 @@ name: Deploy WordPress.org [WIP]
 
 on:
   push:
-    branches: '**'
+    branches: '**'  # Triggers on branch pushes
+    tags: '**'       # Also triggers on tag pushes
+env:
+  plugin_slug: "simple-jwt-login-mailpoet"
 
 jobs:
-  build:
+  validate-deploy:
+    if: ${{ !startsWith(github.ref, 'refs/tags/') }} # Does not run for tags
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Deploy to WordPress.org
+      - name: ♻️ Checkout repository
+        uses: actions/checkout@v3
+      - name: 🦺 Validate Deploy to WordPress.org
         uses: simple-jwt-login/deployer@main
         with:
           plugin_folder: "/"
-          exclude: ".github/, README.md, .gitignore, LICENSE"
-          slug: "simple-jwt-login-mailpoet"
+          exclude: "README.md, .gitignore"
+          slug: ${{ env.plugin_slug }}
+          # assets_folder: "wordpress.org/assets" # No assets folder present in the repository
+          # username: ${{secrets.SVN_USERNAME}} # Not required in dry_run mode
+          # password: ${{secrets.SVN_PASSWORD}} # Not required in dry_run mode
+          # tag: ${{ github.ref_name }} # Don't create a tag in /tags folder
+          # commit_message: "Release plugin" # Not required in dry_run mode
+          dry_run: true
+  deploy:
+    if: ${{ startsWith(github.ref, 'refs/tags/') }} # Runs only when a tag is pushed
+    runs-on: ubuntu-latest
+    steps:
+      - name: ♻️ Checkout repository
+        uses: actions/checkout@v3
+      - name: 🚀 Deploy ${{ github.ref_name }} to WordPress.org
+        uses: simple-jwt-login/deployer@main
+        with:
+          plugin_folder: "/"
+          exclude: "README.md, .gitignore"
+          slug: ${{ env.plugin_slug }}
+          # assets_folder: "wordpress.org/assets" # No assets folder present in the repository
           username: ${{secrets.SVN_USERNAME}}
           password: ${{secrets.SVN_PASSWORD}}
           tag: ${{ github.ref_name }}
-          dry-run: true
+          commit_message: Release plugin version ${{ github.ref_name }}
