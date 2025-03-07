@@ -5,8 +5,8 @@ use SimpleJWTLogin\Libraries\JWT\JWT;
 use SimpleJWTLogin\Modules\SimpleJWTLoginSettings;
 use SimpleJWTLogin\Modules\WordPressData;
 
-add_filter('mailpoet_newsletter_shortcode', 'simple_jwt_login_mailpoet_shortcode', 1, 6);
 //mailpoet_newsletter_shortcode
+add_filter('mailpoet_newsletter_shortcode', 'simple_jwt_login_mailpoet_shortcode', 1, 6);
 
 function simple_jwt_login_mailpoet_shortcode(
     $shortcode,

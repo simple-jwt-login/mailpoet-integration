@@ -7,7 +7,7 @@
     Author URI: https://github.com/nicumicle
     Text Domain: simple-jwt-login-mailpoet
     Domain Path: /i18n
-    Version: 1.0.1
+    Version: 1.0.2
 */
 
 add_action('admin_menu', 'simple_jwt_login__mailpoet_plugin_create_menu_entry', 11);

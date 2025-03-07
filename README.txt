@@ -2,13 +2,13 @@
 
 Contributors: nicu_m
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PK9BCD6AYF58Y&source=url
-Tags: jwt, auto login, tokens, auth, generate jwt, mailpoet
+Tags: jwt, auto login, mailpoet, newsletter login, newsletter jwt
 Requires at least: 4.4.0
 Tested up to: 6.7
 Requires PHP: 5.5
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License URI: https://github.com/simple-jwt-login/mailpoet-integration/blob/master/LICENSE
 
 == Description ==
 
@@ -82,17 +82,20 @@ Yes. You can add as many short-codes as you want in a single email template.
 
 == Changelog ==
 
-= 1.0.1 ( 31 Jul 2024)
+= 1.0.2 (07 Mar 2025)
+- Update WordPress 6.7 compatibility
+
+= 1.0.1 (31 Jul 2024)
 - Fix Shortcode handler
 - Update WordPress 6.6 compatibility
 
-= 1.0.0 ( 03 May 2024)
+= 1.0.0 (03 May 2024)
 - Test with latest WordPress version
 
-= 0.1.1 ( 26 Apr 2022) =
+= 0.1.1 (26 Apr 2022) =
 - Add a new parameter to allow the display of only the URL
 
-= 0.1.0 ( 06 Apr 2022) =
+= 0.1.0 (06 Apr 2022) =
 - Initial release
 
 
