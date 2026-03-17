@@ -18,13 +18,8 @@ jobs:
         uses: simple-jwt-login/deployer@main
         with:
           plugin_folder: "/"
-          exclude: "README.md, .gitignore"
+          exclude: "README.md, .gitignore, .github"
           slug: ${{ env.plugin_slug }}
-          # assets_folder: "wordpress.org/assets" # No assets folder present in the repository
-          # username: ${{secrets.SVN_USERNAME}} # Not required in dry_run mode
-          # password: ${{secrets.SVN_PASSWORD}} # Not required in dry_run mode
-          # tag: ${{ github.ref_name }} # Don't create a tag in /tags folder
-          # commit_message: "Release plugin" # Not required in dry_run mode
           dry_run: true
   deploy:
     if: ${{ startsWith(github.ref, 'refs/tags/') }} # Runs only when a tag is pushed
@@ -36,7 +31,7 @@ jobs:
         uses: simple-jwt-login/deployer@main
         with:
           plugin_folder: "/"
-          exclude: "README.md, .gitignore"
+          exclude: "README.md, .gitignore, .github"
           slug: ${{ env.plugin_slug }}
           # assets_folder: "wordpress.org/assets" # No assets folder present in the repository
           username: ${{secrets.SVN_USERNAME}}
