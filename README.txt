@@ -82,18 +82,18 @@ Yes. You can add as many short-codes as you want in a single email template.
 
 == Changelog ==
 
-= 1.0.3 (17 Mar 2026)
+= 1.0.3 (17 Mar 2026) =
 - Update WordPress 6.9 compatibility
 - Security updates
 
-= 1.0.2 (07 Mar 2025)
+= 1.0.2 (07 Mar 2025) =
 - Update WordPress 6.7 compatibility
 
-= 1.0.1 (31 Jul 2024)
+= 1.0.1 (31 Jul 2024) =
 - Fix Shortcode handler
 - Update WordPress 6.6 compatibility
 
-= 1.0.0 (03 May 2024)
+= 1.0.0 (03 May 2024) =
 - Test with latest WordPress version
 
 = 0.1.1 (26 Apr 2022) =
