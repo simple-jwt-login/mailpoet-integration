@@ -10,6 +10,8 @@ Stable tag: 1.0.3
 License: GPLv2
 License URI: https://github.com/simple-jwt-login/mailpoet-integration/blob/master/LICENSE
 
+Login WordPress users directly from MailPoet newsletters using secure JWT auto-login links.
+
 == Description ==
 
 The Simple JWT Login MailPoet plugin is an add-on for the Simple-Jwt-Login plugin.
@@ -102,5 +104,8 @@ Yes. You can add as many short-codes as you want in a single email template.
 = 0.1.0 (06 Apr 2022) =
 - Initial release
 
+== Upgrade Notice ==
 
+= 1.0.3 (17 Mar 2026)
+- Improved plugin security
  
