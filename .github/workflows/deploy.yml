@@ -30,8 +30,15 @@ jobs:
         uses: actions/checkout@v3
       - name: 🦺 Validate required secrets
         run: |
-          [ -z "${{ secrets.SVN_USERNAME }}" ] && echo "Missing SVN_USERNAME" && exit 1
-          [ -z "${{ secrets.SVN_PASSWORD }}" ] && echo "Missing SVN_PASSWORD" && exit 1
+          if [ -z "${{ secrets.SVN_USERNAME }}" ]; then
+            echo "Missing SVN_USERNAME"
+            exit 1
+          fi
+
+          if [ -z "${{ secrets.SVN_PASSWORD }}" ]; then
+            echo "Missing SVN_PASSWORD"
+            exit 1
+          fi
       - name: 🚀 Deploy ${{ github.ref_name }} to WordPress.org
         uses: simple-jwt-login/deployer@main
         with:
