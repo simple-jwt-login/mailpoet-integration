@@ -3,7 +3,6 @@
 use SimpleJWTLogin\Helpers\Jwt\JwtKeyFactory;
 use SimpleJWTLogin\Libraries\JWT\JWT;
 use SimpleJWTLogin\Modules\SimpleJWTLoginSettings;
-use SimpleJWTLogin\Modules\WordPressData;
 
 //mailpoet_newsletter_shortcode
 add_filter('mailpoet_newsletter_shortcode', 'simple_jwt_login_mailpoet_shortcode', 1, 6);
@@ -36,7 +35,7 @@ function simple_jwt_login_mailpoet_shortcode(
     }
     $date = time() + $validFor;
 
-    $wordPressData = new WordPressData();
+    $wordPressData = simple_jwt_login_mailpoet_get_wordpress_data();
     $jwtSettings = new SimpleJWTLoginSettings($wordPressData);
 
     if ($jwtSettings->getLoginSettings()->isAutologinEnabled() === false) {
@@ -49,6 +48,8 @@ function simple_jwt_login_mailpoet_shortcode(
             [
                 'id' => $userId,
                 'email' => $subscriber->getEmail(),
+                // v4 rejects tokens without iat after a password change.
+                'iat' => time(),
                 'exp' => $date,
             ],
             $factory->getPrivateKey(),

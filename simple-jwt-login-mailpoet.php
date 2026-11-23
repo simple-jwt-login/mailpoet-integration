@@ -53,6 +53,21 @@ function check_simple_jwt_login_activated()
     );
 }
 
+// Call only from hooks: this plugin loads before simple-jwt-login, so the constant is not defined at include time.
+function simple_jwt_login_mailpoet_is_v4()
+{
+    return defined('SIMPLE_JWT_LOGIN_VERSION');
+}
+
+function simple_jwt_login_mailpoet_get_wordpress_data()
+{
+    if (simple_jwt_login_mailpoet_is_v4()) {
+        return \SimpleJWTLogin\Repositories\Wordpress\WordPressRepository::getInstance();
+    }
+
+    return new \SimpleJWTLogin\Modules\WordPressData();
+}
+
 function simple_jwt_login_mailpoet_function()
 {
     $isSimpleJwtLoaded = check_simple_jwt_login_activated();
@@ -66,11 +81,14 @@ function simple_jwt_login_mailpoet_function()
         : false;
     $pluginDirUrl = plugin_dir_url(__FILE__);
     $simpleJwtLoginpluginDirUrl = plugin_dir_url('simple-jwt-login/simple-jwt-login.php');
+    $bootstrapDirUrl = $simpleJwtLoginpluginDirUrl
+        . (simple_jwt_login_mailpoet_is_v4() ? 'assets/' : '')
+        . 'vendor/bootstrap/';
 
     $loadScriptsInFooter = false;
     wp_enqueue_style(
         'simple-jwt-login-bootstrap',
-        $simpleJwtLoginpluginDirUrl . 'vendor/bootstrap/bootstrap.min.css',
+        $bootstrapDirUrl . 'bootstrap.min.css',
         [],
         $pluginVersion
     );
@@ -83,7 +101,7 @@ function simple_jwt_login_mailpoet_function()
 
     wp_enqueue_script(
         'simple-jwt-bootstrap-min',
-        $simpleJwtLoginpluginDirUrl . 'vendor/bootstrap/bootstrap.min.js',
+        $bootstrapDirUrl . 'bootstrap.min.js',
         ['jquery'],
         $pluginVersion,
         $loadScriptsInFooter

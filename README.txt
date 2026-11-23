@@ -4,9 +4,9 @@ Contributors: nicu_m
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PK9BCD6AYF58Y&source=url
 Tags: jwt, auto login, mailpoet, newsletter login, newsletter jwt
 Requires at least: 4.4.0
-Tested up to: 6.9
+Tested up to: 7.1
 Requires PHP: 5.5
-Stable tag: 1.0.3
+Stable tag: 1.1.0
 License: GPLv2
 License URI: https://github.com/simple-jwt-login/mailpoet-integration/blob/master/LICENSE
 
@@ -83,6 +83,10 @@ No. This plugin works only with MailPoet 3. MailPoet 2 is deprecated.
 Yes. You can add as many short-codes as you want in a single email template.
 
 == Changelog ==
+
+= 1.1.0 (23 Nov 2026) =
+- Adapt to work with simple-jwt-login v4
+- Update WordPress 7.1 compatibility
 
 = 1.0.3 (17 Mar 2026) =
 - Update WordPress 6.9 compatibility

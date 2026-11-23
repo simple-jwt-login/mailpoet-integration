@@ -1,14 +1,13 @@
 <?php
 
 use SimpleJWTLogin\Modules\SimpleJWTLoginSettings;
-use SimpleJWTLogin\Modules\WordPressData;
 
 if (!defined('ABSPATH')) {
     exit;
 } //end if
 
 
-$simpleJwtLoginSettings = new SimpleJWTLoginSettings(new WordPressData());
+$simpleJwtLoginSettings = new SimpleJWTLoginSettings(simple_jwt_login_mailpoet_get_wordpress_data());
 $autologinRequiresAuthCodes = $simpleJwtLoginSettings->getLoginSettings()->isAuthKeyRequiredOnLogin();
 $isPluginEnabled = $simpleJwtLoginSettings->getLoginSettings()->isAutologinEnabled();
 
