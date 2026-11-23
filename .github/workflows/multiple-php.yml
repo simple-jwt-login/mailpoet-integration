@@ -1,4 +1,4 @@
-name: "Check Plugin Compatibility Across Multiple PHP Versions"
+name: "Plugin Compatibility Across Multiple PHP Versions"
 
 on:
   push:
@@ -6,44 +6,30 @@ on:
   pull_request:
     branches: [ master ]
 
+permissions:
+  contents: read
+
 jobs:
   # Check there is no syntax errors in the project
   php-linter:
     name: Validate Plugin Code Across Multiple PHP Versions
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        php: [ '5.5', '5.6', '7.1', '7.2', '7.3', '7.4', '8.0', '8.1', '8.2', '8.3', '8.4', '8.5' ]
     steps:
       - name: Checkout
-        uses: actions/checkout@v2.0.0
+        uses: actions/checkout@v4
 
-      - name: PHP Syntax Checker (5.5)
-        uses: prestashop/github-action-php-lint/5.5@master
+      - name: Setup PHP ${{ matrix.php }}
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          coverage: none
+          tools: none
 
-      - name: PHP Syntax Checker (5.6)
-        uses: prestashop/github-action-php-lint/5.6@master
-
-      - name: PHP Syntax Checker (7.1)
-        uses: prestashop/github-action-php-lint/7.1@master
-
-      - name: PHP Syntax Checker (7.2)
-        uses: prestashop/github-action-php-lint/7.2@master
-
-      - name: PHP Syntax Checker (7.3)
-        uses: prestashop/github-action-php-lint/7.3@master
-
-      - name: PHP Syntax Checker (7.4)
-        uses: prestashop/github-action-php-lint/7.4@master
-
-      - name: PHP Syntax Checker (8.0)
-        uses: prestashop/github-action-php-lint/8.0@master
-
-      - name: PHP Syntax Checker (8.1)
-        uses: prestashop/github-action-php-lint/8.1@master
-
-      - name: PHP Syntax Checker (8.2)
-        uses: prestashop/github-action-php-lint/8.2@master
-
-      - name: PHP Syntax Checker (8.3)
-        uses: prestashop/github-action-php-lint/8.3@master
-
-      - name: PHP Syntax Checker (8.4)
-        uses: prestashop/github-action-php-lint/8.4@master
+      - name: PHP Syntax Checker (${{ matrix.php }})
+        run: |
+          php -v
+          find . -type f -name '*.php' -print0 | xargs -0 -n1 -P4 php -l
